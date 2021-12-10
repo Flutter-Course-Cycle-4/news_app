@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/views/widgets/category_item.dart';
 import 'package:news_app/views/widgets/category_screen_title.dart';
+import 'package:news_app/views/widgets/my_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = 'home';
@@ -19,6 +20,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       child: Scaffold(
+        drawer: const MyDrawer(),
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           shape: RoundedRectangleBorder(

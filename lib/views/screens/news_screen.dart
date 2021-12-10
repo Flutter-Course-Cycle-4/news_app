@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/views/widgets/my_drawer.dart';
 
 class NewsScreen extends StatelessWidget {
   static const String routeName = 'news';
@@ -18,6 +19,7 @@ class NewsScreen extends StatelessWidget {
         ),
       ),
       child: Scaffold(
+        drawer: const MyDrawer(),
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           shape: RoundedRectangleBorder(

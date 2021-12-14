@@ -71,7 +71,7 @@ class NewsScreen extends StatelessWidget {
                                   MediaQuery.of(context).size.height * 0.35,
                               itemCount: snapshot.data!.length,
                               itemBuilder: (context, index) {
-                                return NewsItem();
+                                return NewsItem(snapshot.data![index]);
                               },
                             );
                           }

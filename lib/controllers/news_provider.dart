@@ -24,12 +24,15 @@ class NewsProvider with ChangeNotifier {
     try {
       List<Article> articles = [];
       final articlesAsJson = await NewsApiManager.getArticles(category);
-      articles = articlesAsJson.map((e) => Article.fromJson(e)).toList();
+      articlesAsJson.forEach((element) {
+        if (element['description'] != null && element['urlToImage'] != null) {
+          articles.add(Article.fromJson(element));
+        }
+      });
 
       List<Article> filteredArticles = articles
           .where((element) => element.source.name == selectedSource!.name)
           .toList();
-      print(filteredArticles.length);
       return filteredArticles;
     } catch (error) {
       print(error);
